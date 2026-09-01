@@ -1,6 +1,7 @@
 import { onBoard } from '@/features/auth/action/onboard';
 import { auth } from '@clerk/nextjs/server';
 import React from 'react';
+import { ChatShell } from '@/features/conversation/components/chat-shell';
 
 const RootGrouplayout = async ({ children }: { children: React.ReactNode }) => {
 
@@ -8,9 +9,9 @@ const RootGrouplayout = async ({ children }: { children: React.ReactNode }) => {
     await onBoard();
 
     return (
-        <div>
+        <ChatShell>
             {children}
-        </div>
+        </ChatShell>
     );
 }
 
